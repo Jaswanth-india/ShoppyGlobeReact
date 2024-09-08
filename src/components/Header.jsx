@@ -12,7 +12,7 @@ function Header(){
         <>
             <header>
                 <div><img src={logo} /></div>
-                <div><Link to="">Home</Link></div>
+                <div><Link to="/">Home</Link></div>
                 <div><Link to="/about">About</Link></div>
                 <div><Link to="/cart">Cart</Link></div>
             </header>

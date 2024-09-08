@@ -91,3 +91,22 @@
     align-items:center;
     position:absolute;
 }
+
+#cart{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+#cart > div{
+    border:1px solid;
+    margin:2px;
+}
+
+#cart>div a>div:nth-of-type(5){
+    display:flex;
+    align-items:center;
+}
+
+#cart > div a >div:nth-of-type(5) div:nth-of-type(2){
+    margin: 0px 7px;
+}
