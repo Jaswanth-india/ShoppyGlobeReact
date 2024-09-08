@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom"
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom"; 
+import { useDispatch } from "react-redux"; //For dispatching an action to the redux store
 import { removeItem } from "../utils/cartSlice.js";
-import rating from "../assets/star.png"
+import rating from "../assets/star.png"// Image
 
+//Component for each cart item
 function CartItem(props){
     let dispatch=useDispatch()
+
     function handleRemoveItem(e){
+        // Prevent opening of links
         e.preventDefault();
+        // Removes item from the cart.
         dispatch(removeItem(props.index));
     }
     return(

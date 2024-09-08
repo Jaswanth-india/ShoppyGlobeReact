@@ -4,15 +4,16 @@ import './index.css';
 import App from './App.jsx';
 import Cart from "./components/Cart.jsx";
 import NotFound from "./components/NotFound.jsx";
-import About from "./components/About.jsx";
 import Search from "./components/Search.jsx";
 import ProductList from "./components/ProductList.jsx";
 import ProductDetails from "./components/ProductDetails.jsx";
 
 // Functions,utilities
-import React from "react";
+import React,{ lazy,Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const About = lazy(()=>import("./components/About.jsx"));
 
 const router=createBrowserRouter([
     {
@@ -34,7 +35,11 @@ const router=createBrowserRouter([
             },
             {
                 path:"/about",
-                element:<About/>
+                element:(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <About/>
+                </Suspense>
+                )
             },
             {
                 path:"/product/:id",
